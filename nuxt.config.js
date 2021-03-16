@@ -7,9 +7,9 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'me-website-marian-schwandt',
+        title: 'Marian Schwandt',
         htmlAttrs: {
-            lang: 'en'
+            lang: 'de'
         },
         meta: [
             { charset: 'utf-8' },
@@ -36,6 +36,7 @@ export default {
     buildModules: [
         // https://go.nuxtjs.dev/typescript
         '@nuxt/typescript-build',
+        'nuxt-compress'
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
