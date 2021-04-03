@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article>
         <h1>Marian Schwandt</h1>
         <div>{{ $t('titleNote') }}</div>
         <MeDivider />
@@ -27,7 +27,7 @@
                 :url="githubUrl"
             />
         </div>
-    </div>
+    </article>
 </template>
 
 <script lang="ts">

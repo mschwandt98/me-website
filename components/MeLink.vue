@@ -1,5 +1,5 @@
 <template>
-    <a :href="url" :title="url" target="_blank">
+    <a :href="url" :title="url" target="_blank" rel="noopener noreferrer">
         <i v-if="icon != null" :class="`icon-${icon}`"></i>
         <span v-if="displayName">{{ displayName }}</span>
         <span v-else>{{ url }}</span>

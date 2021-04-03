@@ -8,13 +8,18 @@ export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'Marian Schwandt',
-        htmlAttrs: {
-            lang: 'de'
-        },
         meta: [
-            { charset: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: '' }
+            {
+                charset: 'utf-8'
+            },
+            {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1'
+            },
+            {
+                name: 'author',
+                content: 'Marian Schwandt'
+            }
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -42,7 +47,24 @@ export default {
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
-        'nuxt-i18n'
+        ['nuxt-i18n', {
+            locales: [
+                {
+                    code: 'en',
+                    iso: 'en-US'
+                },
+                {
+                    code: 'gb',
+                    iso: 'de-DE'
+                }
+            ],
+            detectBrowserLanguage: {
+                useCookie: true,
+                cookieKey: 'i18n_redirected',
+                onlyOnRoot: true
+            },
+            seo: true
+        }]
     ],
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -72,6 +94,7 @@ export default {
             messages: {
                 en: {
                     titleNote: 'Software Engineer with a passion for Frontend Development',
+                    description: 'Hi, I am a young developer from Magdeburg with a passion for Frontend Development.',
                     name: 'Hi, my name is {0}!',
                     place: 'I am a young developer from Magdeburg.',
                     devStarting: 'I have been developing professionally for 3 years with a focus on web development. For the majority of my training, I learned programming in web development. During this time I also fell in love with web development.',
@@ -81,6 +104,7 @@ export default {
                 },
                 de: {
                     titleNote: 'Software Entwickler mit einer Leidenschaft für Frontend Entwicklung',
+                    description: 'Hi, ich bin ein junger Entwickler aus Magdeburg mit einer Leidenschaft für Frontend Entwicklung.',
                     name: 'Hi, meine Name ist {0}!',
                     place: 'Ich bin ein junger Entwickler aus Magdeburg.',
                     devStarting: 'Ich programmiere professionell seit 3 Jahren mit einem Fokus auf Frontend-Entwicklung. Den Großteil meiner Ausbildungszeit lernte ich die Programmierung in der Webentwicklung. Während dieser Zeit verliebte ich mich auch in die Webentwicklung.',
