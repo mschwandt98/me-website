@@ -22,7 +22,31 @@ export default {
             }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+            {
+                rel: 'icon',
+                type: 'image/x-icon',
+                href: '/favicon.ico'
+            },
+            {
+                rel: 'apple-touch-icon',
+                sizes: '120x120',
+                href: '/icon-120.png'
+            },
+            {
+                rel: 'apple-touch-icon',
+                sizes: '152x152',
+                href: '/icon-152.png'
+            },
+            {
+                rel: 'apple-touch-icon',
+                sizes: '167x167',
+                href: '/icon-167.png'
+            },
+            {
+                rel: 'apple-touch-icon',
+                sizes: '180x180',
+                href: '/icon-180.png'
+            }
         ]
     },
 
@@ -93,8 +117,8 @@ export default {
             fallbackLocale: 'en',
             messages: {
                 en: {
-                    titleNote: 'Software Engineer with a passion for Frontend Development',
-                    description: 'Hi, I am a young developer from Magdeburg with a passion for Frontend Development.',
+                    titleNote: 'Software Engineer, Frontend Development',
+                    description: 'Hi, my name is Marian. On this page I would like to introduce myself to you briefly. If you are interested in my projects, feel free to visit me on GitHub!',
                     name: 'Hi, my name is {0}!',
                     place: 'I am a young developer from Magdeburg.',
                     devStarting: 'I have been developing professionally for 3 years with a focus on web development. For the majority of my training, I learned programming in web development. During this time I also fell in love with web development.',
@@ -103,8 +127,8 @@ export default {
                     githubProfileText: 'my GitHub profile'
                 },
                 de: {
-                    titleNote: 'Software Entwickler mit einer Leidenschaft für Frontend Entwicklung',
-                    description: 'Hi, ich bin ein junger Entwickler aus Magdeburg mit einer Leidenschaft für Frontend Entwicklung.',
+                    titleNote: 'Software Entwickler, Frontend Entwicklung',
+                    description: 'Hi, ich bin Marian. Auf dieser Seite möchte ich mich dir kurz vorstellen. Falls du Interesse an meinen Projekten hast, schau gerne bei mir auf GitHub vorbei!',
                     name: 'Hi, meine Name ist {0}!',
                     place: 'Ich bin ein junger Entwickler aus Magdeburg.',
                     devStarting: 'Ich programmiere professionell seit 3 Jahren mit einem Fokus auf Frontend-Entwicklung. Den Großteil meiner Ausbildungszeit lernte ich die Programmierung in der Webentwicklung. Während dieser Zeit verliebte ich mich auch in die Webentwicklung.',
