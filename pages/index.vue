@@ -47,22 +47,19 @@ export default Vue.extend({
 
 .github-link {
     align-items: center;
+    color: #24292e;
     display: flex;
     font-size: 1.5em !important;
     gap: .25em;
     width: fit-content;
 
-    i {
-        color: #24292e;
-    }
-
     &:hover span {
-        color: #24292e;
+        opacity: 1;
     }
 
     span {
-        color: #b5b5b5;
-        transition: color .2s ease-in;
+        opacity: .6;
+        transition: opacity .2s ease-in;
 
         &::after {
             background-color: #24292e !important;

@@ -78,7 +78,7 @@ export default {
                     iso: 'en-US'
                 },
                 {
-                    code: 'gb',
+                    code: 'de',
                     iso: 'de-DE'
                 }
             ],
