@@ -88,27 +88,9 @@ export default {
                 onlyOnRoot: true
             },
             seo: true
-        }]
+        }],
+        '@nuxtjs/sitemap'
     ],
-
-    // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {
-        html: {
-            minify: {
-                collapseBooleanAttributes: true,
-                decodeEntities: true,
-                minifyCSS: true,
-                minifyJS: true,
-                processConditionalComments: true,
-                removeEmptyAttributes: true,
-                removeRedundantAttributes: true,
-                trimCustomFragments: true,
-                useShortDoctype: true,
-                preserveLineBreaks: false,
-                collapseWhitespace: true
-            }
-        }
-    },
 
     i18n: {
         locales: ['en', 'de'],
@@ -138,6 +120,38 @@ export default {
                     githubProfileText: 'meinem GitHub Profil',
                     error: 'Es trat ein Fehler auf.'
                 }
+            }
+        }
+    },
+
+    sitemap: {
+        hostname: 'https://mschwandt.de',
+        gzip: true,
+        routes: [
+            '/',
+            '/de'
+        ],
+        i18n: {
+            locales: ['en', 'de'],
+            routesNameSeparator: '___'
+        }
+    },
+
+    // Build Configuration: https://go.nuxtjs.dev/config-build
+    build: {
+        html: {
+            minify: {
+                collapseBooleanAttributes: true,
+                decodeEntities: true,
+                minifyCSS: true,
+                minifyJS: true,
+                processConditionalComments: true,
+                removeEmptyAttributes: true,
+                removeRedundantAttributes: true,
+                trimCustomFragments: true,
+                useShortDoctype: true,
+                preserveLineBreaks: false,
+                collapseWhitespace: true
             }
         }
     }
