@@ -39,6 +39,10 @@ a {
         transform-origin: bottom left;
     }
 
+    i {
+        margin-right: .25rem;
+    }
+
     span {
         position: relative;
 
