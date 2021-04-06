@@ -89,7 +89,15 @@ export default {
             },
             seo: true
         }],
-        '@nuxtjs/sitemap'
+        '@nuxtjs/sitemap',
+        ['@nuxtjs/robots', {
+            UserAgent: '*',
+            Allow: '/',
+            Sitemap: [
+                'https://mschwandt.de/sitemap.xml',
+                'https://www.mschwandt.de/sitemap.xml'
+            ]
+        }]
     ],
 
     i18n: {
