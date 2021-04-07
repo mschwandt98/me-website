@@ -11,7 +11,3 @@ export default Vue.extend({
     layout: 'error'
 });
 </script>
-
-<style lang="scss" scoped>
-
-</style>

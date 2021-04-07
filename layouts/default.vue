@@ -2,8 +2,8 @@
     <div>
         <MeImage
             classes="cover-img"
-            altText=""
-            titleText=""
+            :altText="$t('imageText')"
+            :titleText="$t('imageText')"
             :sizes="[600, 800, 1000, 1200, 1600, 2000]"
             :sources="sources"
         />
@@ -48,12 +48,10 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-:root {
-    --primary: #2e2e2e;
-}
+@import '../variables.scss';
 
 ::selection {
-    background-color: rgba(#2e2e2e, .2);
+    background-color: rgba($primary, .2);
 }
 
 *,
@@ -65,14 +63,10 @@ export default Vue.extend({
 }
 
 html {
-    background-color: rgb(230, 230, 230);
+    background-color: $secondary;
+    color: $primary;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-}
-
-body {
-    color: var(--primary);
-    margin: 0;
 }
 
 h1 {
@@ -91,7 +85,7 @@ h1 {
         justify-content: flex-end;
 
         .content {
-            background-color: rgba(230, 230, 230, 0.8);
+            background-color: rgba($secondary, 0.8);
             height: 100%;
             min-height: 100vh;
             max-width: 40vw;
@@ -99,7 +93,7 @@ h1 {
     }
 
     .cover-img {
-        position: absolute;
+        position: fixed;
         object-fit: cover;
         object-position: center left;
         height: 100vh;
@@ -121,7 +115,6 @@ h1 {
     height: 8px;
     width: 8px;
 
-    // Fixen
     &:hover {
         height: 12px;
         width: 12px;

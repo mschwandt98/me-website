@@ -46,8 +46,9 @@ export default Vue.extend({
 @import '~assets/icons.css';
 
 .github-link {
+    $github-color: #24292e;
     align-items: center;
-    color: #24292e;
+    color: $github-color;
     display: flex;
     font-size: 1.5em !important;
     gap: .25em;
@@ -62,7 +63,7 @@ export default Vue.extend({
         transition: opacity .2s ease-in;
 
         &::after {
-            background-color: #24292e !important;
+            background-color: $github-color !important;
         }
     }
 }
