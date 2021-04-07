@@ -131,8 +131,8 @@ export default {
             UserAgent: '*',
             Allow: '/',
             Sitemap: [
-                'https://mschwandt.de/sitemap.xml',
-                'https://www.mschwandt.de/sitemap.xml'
+                'https://www.mschwandt.de/sitemap.xml',
+                'https://www.mschwandt.de/sitemap.xml.gz'
             ]
         }]
     ],
