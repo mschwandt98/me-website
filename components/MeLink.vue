@@ -28,8 +28,6 @@ export default Vue.component('MeLink', {
 </script>
 
 <style lang="scss" scoped>
-@import '../variables.scss';
-
 a {
     color: inherit;
     font-size: inherit;
@@ -49,7 +47,6 @@ a {
         position: relative;
 
         &::after {
-            background-color: $primary;
             content: '';
             position: absolute;
             bottom: 0;

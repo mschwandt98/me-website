@@ -17,6 +17,10 @@ export default {
                 content: 'width=device-width, initial-scale=1'
             },
             {
+                name: 'theme-color',
+                content: '#e6e6e6'
+            },
+            {
                 name: 'author',
                 content: 'Marian Schwandt'
             }

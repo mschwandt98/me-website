@@ -57,6 +57,9 @@ export default Vue.extend({
 *,
 *::before,
 *::after {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
