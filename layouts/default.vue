@@ -28,20 +28,17 @@ export default Vue.extend({
         }
     },
     head() {
-        const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true });
         return {
             htmlAttrs: {
                 lang: this.$i18n.locale
             },
             meta: [
                 {
-                    hid: 'description',
                     name: 'description',
                     content: this.$t('description') as string
                 }
             ],
-            title: 'Marian Schwandt - ' + this.$t('titleNote'),
-            link: i18nHead.link
+            title: 'Marian Schwandt - ' + this.$t('titleNote')
         }
     }
 });

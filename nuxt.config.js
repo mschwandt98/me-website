@@ -13,6 +13,7 @@ export default {
                 charset: 'utf-8'
             },
             {
+                hid: 'viewport',
                 name: 'viewport',
                 content: 'width=device-width, initial-scale=1'
             },
@@ -76,22 +77,54 @@ export default {
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
         ['nuxt-i18n', {
+            baseUrl: 'https://www.mschwandt.de',
             locales: [
                 {
                     code: 'en',
-                    iso: 'en-US'
+                    iso: 'en-US',
+                    name: 'English'
                 },
                 {
                     code: 'de',
-                    iso: 'de-DE'
+                    iso: 'de-DE',
+                    name: 'Deutsch'
                 }
             ],
+            defaultLocale: 'en',
             detectBrowserLanguage: {
                 useCookie: true,
                 cookieKey: 'i18n_redirected',
-                onlyOnRoot: true
+                alwaysRedirect: true
             },
-            seo: true
+            vueI18n: {
+                fallbackLocale: 'en',
+                messages: {
+                    en: {
+                        titleNote: 'Software Engineer, Frontend Development',
+                        description: 'Hi, my name is Marian. On this page I would like to introduce myself to you briefly. If you are interested in my projects, feel free to visit me on GitHub!',
+                        name: 'Hi, my name is {0}!',
+                        place: 'I am a young developer from Magdeburg.',
+                        devStarting: 'I have been developing professionally for 3 years with a focus on web development. For the majority of my training, I learned programming in web development. During this time I also fell in love with web development.',
+                        privateDev: 'Unfortunately, during my apprenticeship I didn\'t have much time to develop in my private life. But now I want to get started right away. In the future, I\'ll be a lot more active on GitHub. There I will evolve my skills in JavaScript, C#, PHP and JS-Frameworks like VueJS.',
+                        githubLink: 'If you\'re interested in my projects, just check out {0} - linked below.',
+                        githubProfileText: 'my GitHub profile',
+                        imageText: 'That\'s me on the Elbe in front of Magdeburg Cathedral.',
+                        error: 'There was an error.'
+                    },
+                    de: {
+                        titleNote: 'Software Entwickler, Frontend Entwicklung',
+                        description: 'Hi, ich bin Marian. Auf dieser Seite möchte ich mich dir kurz vorstellen. Falls du Interesse an meinen Projekten hast, schau gerne bei mir auf GitHub vorbei!',
+                        name: 'Hi, mein Name ist {0}!',
+                        place: 'Ich bin ein junger Entwickler aus Magdeburg.',
+                        devStarting: 'Ich programmiere professionell seit 3 Jahren mit einem Fokus auf Frontend-Entwicklung. Den Großteil meiner Ausbildungszeit lernte ich die Programmierung in der Webentwicklung. Während dieser Zeit verliebte ich mich auch in die Webentwicklung.',
+                        privateDev: 'Leider hatte ich während meiner Ausbildung nicht viel Zeit zum Entwickeln in meiner Freizeit. Aber jetzt möchte ich damit loslegen. In Zukunft werde ich aktiver auf GitHub sein. Dort werde ich meine Fähigkeiten in JavaScript, C#, PHP und JS-Frameworks wie VueJS verbessern.',
+                        githubLink: 'Wenn du an meinen Projekten interessiert bist, schau auf {0} vorbei.',
+                        githubProfileText: 'meinem GitHub Profil',
+                        imageText: 'Das bin ich an der Elbe vor dem Magdeburger Dom.',
+                        error: 'Es trat ein Fehler auf.'
+                    }
+                }
+            }
         }],
         '@nuxtjs/sitemap',
         ['@nuxtjs/robots', {
@@ -103,40 +136,6 @@ export default {
             ]
         }]
     ],
-
-    i18n: {
-        locales: ['en', 'de'],
-        defaultLocale: 'en',
-        vueI18n: {
-            fallbackLocale: 'en',
-            messages: {
-                en: {
-                    titleNote: 'Software Engineer, Frontend Development',
-                    description: 'Hi, my name is Marian. On this page I would like to introduce myself to you briefly. If you are interested in my projects, feel free to visit me on GitHub!',
-                    name: 'Hi, my name is {0}!',
-                    place: 'I am a young developer from Magdeburg.',
-                    devStarting: 'I have been developing professionally for 3 years with a focus on web development. For the majority of my training, I learned programming in web development. During this time I also fell in love with web development.',
-                    privateDev: 'Unfortunately, during my apprenticeship I didn\'t have much time to develop in my private life. But now I want to get started right away. In the future, I\'ll be a lot more active on GitHub. There I will evolve my skills in JavaScript, C#, PHP and JS-Frameworks like VueJS.',
-                    githubLink: 'If you\'re interested in my projects, just check out {0} - linked below.',
-                    githubProfileText: 'my GitHub profile',
-                    imageText: 'That\'s me on the Elbe in front of Magdeburg Cathedral.',
-                    error: 'There was an error.'
-                },
-                de: {
-                    titleNote: 'Software Entwickler, Frontend Entwicklung',
-                    description: 'Hi, ich bin Marian. Auf dieser Seite möchte ich mich dir kurz vorstellen. Falls du Interesse an meinen Projekten hast, schau gerne bei mir auf GitHub vorbei!',
-                    name: 'Hi, mein Name ist {0}!',
-                    place: 'Ich bin ein junger Entwickler aus Magdeburg.',
-                    devStarting: 'Ich programmiere professionell seit 3 Jahren mit einem Fokus auf Frontend-Entwicklung. Den Großteil meiner Ausbildungszeit lernte ich die Programmierung in der Webentwicklung. Während dieser Zeit verliebte ich mich auch in die Webentwicklung.',
-                    privateDev: 'Leider hatte ich während meiner Ausbildung nicht viel Zeit zum Entwickeln in meiner Freizeit. Aber jetzt möchte ich damit loslegen. In Zukunft werde ich aktiver auf GitHub sein. Dort werde ich meine Fähigkeiten in JavaScript, C#, PHP und JS-Frameworks wie VueJS verbessern.',
-                    githubLink: 'Wenn du an meinen Projekten interessiert bist, schau auf {0} vorbei.',
-                    githubProfileText: 'meinem GitHub Profil',
-                    imageText: 'Das bin ich an der Elbe vor dem Magdeburger Dom.',
-                    error: 'Es trat ein Fehler auf.'
-                }
-            }
-        }
-    },
 
     sitemap: {
         hostname: 'https://mschwandt.de',
