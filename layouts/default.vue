@@ -52,6 +52,19 @@ export default Vue.extend({
 <style lang="scss">
 @import '../variables.scss';
 
+@mixin scroll-shadow {
+    background:
+            linear-gradient($secondary 33%, rgba($secondary, 0)),
+            linear-gradient(rgba($secondary, 0), $secondary 66%) 0 100%,
+            radial-gradient(farthest-side at 50% 0, rgba(34, 34, 34, .6), rgba(black, 0)),
+            radial-gradient(farthest-side at 50% 100%, rgba(34, 34, 34, .5), rgba(black, 0)) 0 100%;
+    background-attachment: local, local, scroll, scroll;
+    background-repeat: no-repeat;
+    background-size: 100% 45px, 100% 45px, 100% 16px, 100% 16px;
+    overflow-y: auto;
+    position: relative;
+}
+
 ::selection {
     background-color: rgba($primary, .2);
 }
@@ -72,6 +85,7 @@ html {
     color: $primary;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
+    overflow: hidden;
 }
 
 h1 {
@@ -90,9 +104,9 @@ h1 {
         justify-content: flex-end;
 
         .content {
+            @include scroll-shadow();
             background-color: rgba($secondary, 0.8);
-            height: 100%;
-            min-height: 100vh;
+            height: 100vh;
             max-width: 40vw;
         }
     }
@@ -108,6 +122,11 @@ h1 {
 }
 
 @media screen and (max-width: 991px) {
+    body {
+        @include scroll-shadow();
+        height: 100vh;
+    }
+
     .cover-img {
         height: 25vh;
         width: 100%;
