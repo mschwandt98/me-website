@@ -19,10 +19,6 @@ AddCharset UTF-8 .js
 </IfModule>
 
 <IfModule mod_headers.c>
-    <FilesMatch "\.(ico|avif|webp|jpeg|jpg|png|css|js|ttf)$">
-        Header set Cache-Control "max-age=31536000, public"
-    </FilesMatch>
-
     # Serve brotli compressed CSS and JS files if they exist and the client accepts brotli.
     RewriteCond "%{HTTP:Accept-encoding}" "br"
     RewriteCond "%{REQUEST_FILENAME}\.br" "-s"
@@ -35,5 +31,8 @@ AddCharset UTF-8 .js
     <FilesMatch "(\.js\.br|\.css\.br)$">
         Header append Content-Encoding br
         Header append Vary Accept-Encoding
+    </FilesMatch>
+    <FilesMatch "\.(ico|avif|webp|jpeg|jpg|png|css|js|ttf|br)$">
+        Header append Cache-Control "max-age=31536000, public"
     </FilesMatch>
 </IfModule>
