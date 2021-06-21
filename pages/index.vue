@@ -2,17 +2,17 @@
     <div>
         <article>
             <h1>Marian Schwandt</h1>
-            <p>{{ $t('titleNote') }}</p>
+            <p>{{ $t("titleNote") }}</p>
             <MeDivider />
             <p>
-                {{ $t('name', ['Marian Schwandt']) }}
-                {{ $t('place', ['Magdeburg']) }}
+                {{ $t("name", ["Marian Schwandt"]) }}
+                {{ $t("place", ["Magdeburg"]) }}
             </p>
             <p>
-                {{ $t('devStarting') }}
+                {{ $t("devStarting") }}
             </p>
             <p>
-                {{ $t('privateDev') }}
+                {{ $t("privateDev") }}
             </p>
             <p>
                 <i18n path="githubLink">
@@ -43,20 +43,20 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export default Vue.extend({
-    data: function() {
+    data: function () {
         return {
-            githubUrl: 'https://github.com/mschwandt98',
-            twitterUrl: 'https://twitter.com/masc_1998'
-        }
-    }
+            githubUrl: "https://github.com/mschwandt98",
+            twitterUrl: "https://twitter.com/masc_1998",
+        };
+    },
 });
 </script>
 
 <style lang="scss">
-@import '~assets/icons.css';
+@import "~assets/icons.css";
 
 .social-links {
     display: flex;
@@ -68,8 +68,8 @@ export default Vue.extend({
         align-items: center;
         display: flex;
         font-size: 1.5em !important;
-        gap: .25em;
-        padding: .25rem .5rem;
+        gap: 0.25em;
+        padding: 0.25rem 0.5rem;
         width: fit-content;
 
         &:hover span {
@@ -77,8 +77,8 @@ export default Vue.extend({
         }
 
         span {
-            opacity: .6;
-            transition: opacity .2s ease-in;
+            opacity: 0.6;
+            transition: opacity 0.2s ease-in;
         }
     }
 }

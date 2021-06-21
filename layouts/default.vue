@@ -15,21 +15,21 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export default Vue.extend({
     data: function() {
         return {
             sources: [
-                '/background.avif',
-                '/background.webp',
-                '/background.jpg',
-                '/background.png'
+                "/background.avif",
+                "/background.webp",
+                "/background.jpg",
+                "/background.png"
             ]
-        }
+        };
     },
     head() {
-        const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+        const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true });
         return {
             htmlAttrs: {
                 lang: this.$i18n.locale,
@@ -37,35 +37,23 @@ export default Vue.extend({
             },
             meta: [
                 {
-                    name: 'description',
-                    content: this.$t('description') as string
+                    name: "description",
+                    content: this.$t("description") as string
                 },
                 ...(i18nHead.meta ?? [])
             ],
             link: i18nHead.link,
-            title: 'Marian Schwandt - ' + this.$t('titleNote')
-        }
+            title: "Marian Schwandt - " + this.$t("titleNote")
+        };
     }
 });
 </script>
 
 <style lang="scss">
-@import '../variables.scss';
-
-@mixin scroll-shadow {
-    background:
-            linear-gradient($secondary 33%, rgba($secondary, 0)),
-            linear-gradient(rgba($secondary, 0), $secondary 66%) 0 100%,
-            radial-gradient(farthest-side at 50% 0, rgba(34, 34, 34, .6), rgba(black, 0)),
-            radial-gradient(farthest-side at 50% 100%, rgba(34, 34, 34, .5), rgba(black, 0)) 0 100%;
-    background-attachment: local, local, scroll, scroll;
-    background-repeat: no-repeat;
-    background-size: 100% 45px, 100% 45px, 100% 16px, 100% 16px;
-    overflow-y: auto;
-}
+@import "../variables.scss";
 
 ::selection {
-    background-color: rgba($primary, .2);
+    background-color: rgba($primary, 0.2);
 }
 
 *,
@@ -82,7 +70,7 @@ export default Vue.extend({
 html {
     background-color: $secondary;
     color: $primary;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 16px;
 }
 
@@ -92,25 +80,28 @@ h1 {
 
 .container .content {
     min-width: 256px;
+    overflow-y: auto;
     padding: 1em 2em;
     position: relative;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 576px) {
     html {
         overflow: hidden;
     }
 
     .container {
-        display: flex;
-        justify-content: flex-end;
+        border-radius: 1rem;
+        overflow: hidden;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        left: auto;
 
         .content {
-            @include scroll-shadow();
             background-color: rgba($secondary, 0.8);
-            height: 100vh;
-            max-width: 40vw;
-            position: relative;
+            height: 100%;
         }
     }
 
@@ -124,9 +115,20 @@ h1 {
     }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (min-width: 992px) {
+    .container .content {
+        max-width: 40vw;
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width: 576px) {
+    .container .content {
+        max-width: 60vw;
+    }
+}
+
+@media screen and (max-width: 575px) {
     #root {
-        @include scroll-shadow();
         height: 100vh;
         padding-bottom: 3rem;
         position: fixed;
