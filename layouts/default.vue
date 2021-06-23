@@ -2,8 +2,9 @@
     <div id="root">
         <div class="cover-img">
             <MeImage
-                :altText="$t('imageText')"
-                :titleText="$t('imageText')"
+                :altText="
+                    'Marian Schwandt, ' + $t('webDeveloper') + ', Magdeburg'
+                "
                 :sizes="[600, 800, 1000, 1200, 1600, 2000]"
                 :sources="sources"
             />
@@ -72,6 +73,7 @@ html {
     color: $primary;
     font-family: "Poppins", sans-serif;
     font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 h1 {

@@ -8,21 +8,7 @@
                 {{ $t("name", ["Marian Schwandt"]) }}
                 {{ $t("place", ["Magdeburg"]) }}
             </p>
-            <p>
-                {{ $t("devStarting") }}
-            </p>
-            <p>
-                {{ $t("privateDev") }}
-            </p>
-            <p>
-                <i18n path="githubLink">
-                    <MeLink
-                        :displayName="$t('githubProfileText')"
-                        :url="githubUrl"
-                        class="github-link"
-                    />
-                </i18n>
-            </p>
+            <p>{{ $t("article") }}</p>
         </article>
         <MeDivider />
         <div class="social-links">
@@ -58,14 +44,15 @@
 import Vue from "vue";
 
 export default Vue.extend({
-    data: function () {
+    data: function() {
         return {
             githubUrl: "https://github.com/mschwandt98",
-            linkedInUrl: "https://www.linkedin.com/in/marian-schwandt-0497a2212",
+            linkedInUrl:
+                "https://www.linkedin.com/in/marian-schwandt-0497a2212",
             twitterUrl: "https://twitter.com/masc_1998",
             mailUrl: "mailto:marian.schwandt@gmail.com"
         };
-    },
+    }
 });
 </script>
 
