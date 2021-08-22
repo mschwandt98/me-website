@@ -5,7 +5,7 @@
                 :altText="
                     'Marian Schwandt, ' + $t('webDeveloper') + ', Magdeburg'
                 "
-                :sizes="[600, 800, 1000, 1200, 1600, 2000]"
+                :sizes="[400, 600, 800, 1000, 1200, 1600, 2000]"
                 :sources="sources"
             />
         </div>
